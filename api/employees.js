@@ -18,7 +18,7 @@ router.post("/", async (req, res, next) => {
   if (!name) {
     return next({
       status: 400,
-      message: "Employee name must be entered",
+      message: "Employee name must be entered.",
     })
   }
   try{
@@ -39,7 +39,7 @@ router.get("/:id", async (req, res, next) => {
     } else {
       next({
         status: 404,
-        message: `No employee with ID ${id} exists`
+        message: `No employee with ID ${id} exists.`
       });
     }
   } catch (e) {
@@ -54,7 +54,7 @@ router.put("/:id", async (req, res, next) => {
   if (!name) {
     return next({
       status: 400,
-      message: "You must provide a name for the employee"
+      message: "You must provide a name for the employee."
     });
   }
 
@@ -63,7 +63,7 @@ router.put("/:id", async (req, res, next) => {
     if (!employee) {
       return next({
         status: 404,
-        message: `No employee with ID ${id} exists`,
+        message: `No employee with ID ${id} exists.`,
       });
     }
 
