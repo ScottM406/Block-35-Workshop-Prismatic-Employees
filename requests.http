@@ -1,0 +1,59 @@
+@host=http://localhost:3000
+
+### GET GREETING
+GET {{host}}
+
+### GET EMPLOYEE ARRAY
+GET {{host}}/employees
+
+### POST NEW EMPLOYEE
+POST {{host}}/employees
+Content-Type: application/json
+
+{
+  "name": "Jim Bob"
+}
+
+### POST NEW EMPLOYEE FAILURE
+POST {{host}}/employees
+Content-Type: application/json
+
+{
+  "hiredate": 102894
+}
+
+### GET EMPLOYEE WITH SPECIFIC ID 
+GET {{host}}/employees/8
+
+### GET NON-EXISTANT EMPLOYEE
+GET {{host}}/employees/85
+
+### UPDATE EMPLOYEE
+PUT {{host}}/employees/7
+Content-Type: application/json
+
+{
+  "name": "Mr. Krabs"
+}
+
+### UPDATE NON-EXISTANT EMPLOYEE
+PUT {{host}}/employees/77
+Content-Type: application/json
+
+{
+  "name": "Mr. Anderson"
+}
+
+### UPDATE EMPLOYEE WITH AN INAPPROPRIATE REQUEST
+PUT {{host}}/employees/77
+Content-Type: application/json
+
+{
+  "naem": "Gordon Ramsey"
+}
+
+### DELETE EMPLOYEE
+DELETE {{host}}/employees/10
+
+### DELETE NON-EXISTANT EMPLOYEE
+DELETE {{host}}/employees/8888
